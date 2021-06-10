@@ -1,0 +1,11 @@
+// This is the public API offered by your entity.
+syntax = "proto3";
+
+package com.example;
+
+option java_outer_classname = "RefIdProto";
+
+message RefId {
+    string id = 1;
+    string type = 2;
+}

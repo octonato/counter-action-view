@@ -1,0 +1,20 @@
+// This is the public API offered by your entity.
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+import "akkaserverless/annotations.proto";
+import "ref_id.proto";
+
+package com.example;
+
+option java_outer_classname = "CounterActionApi";
+
+
+service CounterAction {
+    option (akkaserverless.service) = {
+        type : SERVICE_TYPE_ACTION
+    };
+
+    rpc newCounter(google.protobuf.Empty) returns (RefId);
+}
